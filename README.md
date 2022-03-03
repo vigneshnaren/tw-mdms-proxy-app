@@ -1,9 +1,7 @@
-# tw-mdms-proxy-app
-
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - dev-tw-mdms-proxy-app
+name: Build and deploy JAR app to Azure Web App - tw-mdms-proxy-app
 
 on:
   push:
@@ -21,7 +19,7 @@ jobs:
       - name: Set up Java version
         uses: actions/setup-java@v1
         with:
-          java-version: '8'
+          java-version: '11'
 
       - name: Build with Maven
         run: mvn clean install
@@ -49,7 +47,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'dev-tw-mdms-proxy-app'
+          app-name: 'tw-mdms-proxy-app'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_8a76208578eb4ca6bbd4bfc10e831b5c }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_49aea41bb1cd482b9aaac3ac51df963a }}
           package: '*.jar'
