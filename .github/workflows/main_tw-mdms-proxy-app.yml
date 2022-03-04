@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'tw-mdms-proxy-app'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A4547BE6384847B3905903DACBDE2A82 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_17E5729A543E471F8C17974DBD437A9A }}
           package: '*.jar'
