@@ -24,11 +24,14 @@ public class ProxyController {
     public ResponseEntity<?> exportBillingData(@RequestBody String soapReq, @RequestHeader  Map<String, String> reqHeaders)   {
         Object soapResponse = proxyService.sendExportBillingData(soapReq,reqHeaders);
 
+        log.info("MDMS MeterRead is processed");
         return new ResponseEntity<>(soapResponse, HttpStatus.OK);
     }
     @PostMapping(value = "/processWorkResponseMessage",  consumes = MediaType.APPLICATION_XML_VALUE,produces = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity<?> processWorkResponseMessage(@RequestBody String soapReq, @RequestHeader  Map<String, String> reqHeaders)   {
         Object soapResponse = proxyService.sendProcessWorkResponseMessage(soapReq,reqHeaders);
+        
+        log.info("MDMS Meter Activation is processed");
         return new ResponseEntity<>(soapResponse, HttpStatus.ACCEPTED);
     }
 }
